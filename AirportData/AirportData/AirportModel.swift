@@ -26,8 +26,8 @@ class Node {
 }
 class Tree {
     private var pRoot: Node?
-    var time: CFTimeInterval = 0
-    var levenshteinCount = 0
+    var time: CFTimeInterval = 0 // A retrieval, the levenshtein time
+    var levenshteinCount = 0 // A retrieval, the levenshtein count
     func insert(str: String, airPortModel: AirportModel) {
         
         if nil != pRoot {
@@ -47,6 +47,7 @@ class Tree {
                     pCur?.right = nil
                     pPre.left = pCur
                     break
+                    
                 } else if let pCurT = pCur, pCurT.length > distance {
                     let nowNode = Node()
                     nowNode.words = str
@@ -102,7 +103,8 @@ class Tree {
         var pCur: Node? = pRoot!.left
         while(pCur != nil) {
             if (pCur!.length<(distance+limit_num) &&
-                pCur!.length>(distance-limit_num)) {
+                pCur!.length>(distance-limit_num) &&
+                pCur!.length>(limit_num-distance)) {
                 find(pRoot: pCur!, str: str, limit_num: limit_num, result: &result)
             }
             //find(pRoot: pCur!, str: str, limit_num: limit_num, result: &result)
