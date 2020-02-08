@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AirportData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VoN-o1-pJD">
+                                <rect key="frame" x="20" y="132" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Zl0-21-YEc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchTFChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="oeR-mt-MIW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kR7-S4-oic"/>
+                                </connections>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HVH-do-dsJ">
+                                <rect key="frame" x="20" y="196" width="374" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DSx-Yu-Pxn"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9KU-5J-hBp"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txc-hk-ote">
+                                <rect key="frame" x="20" y="66" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3hM-Ks-0Or"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="limitTFChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="duy-6J-Jow"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="EcE-er-meb"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VoN-o1-pJD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="88" id="08d-N3-jh3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HVH-do-dsJ" secondAttribute="trailing" constant="20" id="6jG-bP-iJX"/>
+                            <constraint firstItem="HVH-do-dsJ" firstAttribute="top" secondItem="VoN-o1-pJD" secondAttribute="bottom" constant="20" id="A2C-zb-eNY"/>
+                            <constraint firstItem="txc-hk-ote" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CCk-Cd-p60"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HVH-do-dsJ" secondAttribute="bottom" id="PCH-h9-auK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="txc-hk-ote" secondAttribute="trailing" constant="20" id="S2L-3a-nf1"/>
+                            <constraint firstItem="HVH-do-dsJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="V3p-f3-hj7"/>
+                            <constraint firstItem="txc-hk-ote" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="XoV-Cr-ja7"/>
+                            <constraint firstItem="VoN-o1-pJD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ajg-0b-JwL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VoN-o1-pJD" secondAttribute="trailing" constant="20" id="fkr-VQ-OWD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="limitTF" destination="txc-hk-ote" id="JOf-yW-tP3"/>
+                        <outlet property="tableView" destination="HVH-do-dsJ" id="Np1-Dp-uZb"/>
+                        <outlet property="textField" destination="VoN-o1-pJD" id="JBN-W0-z5E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
